@@ -9,12 +9,12 @@ function prompt_kubernetes -d 'kubernetes env highlighter'
       set_color -b blue red
       echo "$right_segment_separator"
       set_color -b red black
-      echo -n " $kubernetes_env "
+      echo -n " PRODUCTION "
     case '*'
       set_color -b blue yellow
       echo "$right_segment_separator"
       set_color -b yellow black
-      echo -n " $kubernetes_env "
+      echo -n " STAGING "
   end
   set_color -b normal
 end
