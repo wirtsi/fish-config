@@ -1,3 +1,5 @@
+#enable vi mode
+set fish_key_bindings fish_vi_key_bindings
 #Java
 set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
