@@ -1,3 +1,1 @@
-function fish_title
-	
-end
+/Users/fkrause/.config/fisherman/bobthefish/fish_title.fish
