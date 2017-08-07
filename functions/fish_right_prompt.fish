@@ -47,5 +47,5 @@ function fish_right_prompt -d 'Prints right prompt'
     prompt_vi_mode
     set_color normal
   end
-  prompt_kubernetes
+  #prompt_kubernetes
 end
