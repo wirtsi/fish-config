@@ -10,6 +10,11 @@ set fish_key_bindings fish_vi_key_bindings
 #set -x PATH ~/.rbenv/shims $PATH
 #rbenv rehash
 
+#https://github.com/ryanoasis/nerd-fonts
+set -x theme_nerd_fonts yes
+set -x theme_color_scheme base16-dark
+
+
 #vim
 set -U EDITOR nvim
 #set -x KUBE_EDITOR nvim

@@ -1,3 +1,1 @@
-# Redefine fish_mode_prompt function as empty to hide fish-shell mode indicator
-function fish_mode_prompt
-end
+/Users/fkrause/.config/fisherman/bobthefish/fish_mode_prompt.fish
