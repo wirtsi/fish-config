@@ -1,1 +1,0 @@
-/Users/fkrause/.config/fisherman/bass/functions/bass.fish

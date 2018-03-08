@@ -1,35 +1,42 @@
-#enable vi mode
 set fish_key_bindings fish_vi_key_bindings
+#enable vi mode
 #Java
 #set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
-#load this so the prompt gets the path (which is needed for displaying the kubernetes env)
-#source ~/.config/fish/functions/gcloud-fish.fish
-
-#rbenv
-#set -x PATH ~/.rbenv/shims $PATH
-#rbenv rehash
+#Tomorrow Night
+if status --is-interactive
+    eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
+end
 
 #https://github.com/ryanoasis/nerd-fonts
 set -x theme_nerd_fonts yes
-set -x theme_color_scheme base16-dark
-
-
+set -x theme_color_scheme Tomorrow-Night
+set -x theme_display_date no
+#brighter dirs
+set -gx LSCOLORS gxfxcxdxbxegedabagacad
+set -gx CLICOLOR 1
+set -gx TERM xterm-256color
 #vim
 set -U EDITOR nvim
-#set -x KUBE_EDITOR nvim
+set -x KUBE_EDITOR nvim
 
 #visual mode
 set -x VISUAL nvim
 
-
 alias vi="/usr/local/bin/nvim"
 alias vim="/usr/local/bin/nvim"
-alias k="kubectl"
+alias k="/usr/local/bin/kubectl"
+alias l="ls -la"
 
-#set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/gettext/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/python/libexec/bin" $fish_user_paths
+#set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $PATH
+set -x PATH $PATH /usr/local/opt/gettext/bin /usr/local/opt/sqlite/bin \
+    /usr/local/opt/openssl/bin \
+    /usr/local/opt/go/libexec/bin
+
+set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" ---glob "!coverage/*" --glob "!reports/*" --glob "!build/*"'
+
+set -x GOPATH ~/go
+set -x GOROOT /usr/local/opt/go/libexec
+set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
+set -g fish_user_paths "$GOPATH/bin" $fish_user_paths
