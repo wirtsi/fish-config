@@ -235,6 +235,5 @@ function fish_prompt
   prompt_user
   prompt_dir
   available git; and prompt_git
-  available svn; and prompt_svn
   prompt_finish
 end
