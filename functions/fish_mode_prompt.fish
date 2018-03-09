@@ -7,17 +7,17 @@ function prompt_vi_mode -d 'vi mode status indicator'
       case default
         set_color -b brgreen black
         echo " N "
-        set_color -b black brgreen
+        set_color -b white brgreen
         echo "$segment_separator"
       case insert
         set_color -b brblue black
         echo " I "
-        set_color -b black brblue
+        set_color -b white brblue
         echo "$segment_separator"
       case visual
         set_color -b brred black
         echo " V "
-        set_color -b black brred
+        set_color -b white brred
         echo "$segment_separator"
     end
 end
