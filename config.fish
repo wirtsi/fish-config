@@ -29,11 +29,14 @@ alias k="/usr/local/bin/kubectl"
 alias l="ls -la"
 
 #set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $PATH
-set -x PATH $PATH /usr/local/opt/gettext/bin /usr/local/opt/sqlite/bin \
+set -x PATH /usr/local/opt/gettext/bin /usr/local/opt/sqlite/bin \
     /usr/local/opt/openssl/bin \
-    /usr/local/opt/go/libexec/bin
+    /usr/local/opt/go/libexec/bin \
+    ~/.composer/vendor/bin \
+    $PATH
 
-set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" ---glob "!coverage/*" --glob "!reports/*" --glob "!build/*"'
+
+set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!coverage/*" --glob "!reports/*" --glob "!build/*"'
 
 set -x GOPATH ~/go
 set -x GOROOT /usr/local/opt/go/libexec
