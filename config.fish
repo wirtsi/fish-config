@@ -1,5 +1,5 @@
-set fish_key_bindings fish_vi_key_bindings
 #enable vi mode
+set fish_key_bindings fish_vi_key_bindings
 #Java
 #set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
@@ -31,8 +31,8 @@ alias l="ls -la"
 #set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $PATH
 set -x PATH /usr/local/opt/gettext/bin /usr/local/opt/sqlite/bin \
     /usr/local/opt/openssl/bin \
-    /usr/local/opt/go/libexec/bin \
     ~/.composer/vendor/bin \
+    ~/.config/yarn/global/node_modules/.bin \
     $PATH
 
 
@@ -40,6 +40,11 @@ set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.g
 
 set -x GOPATH ~/go
 set -x GOROOT /usr/local/opt/go/libexec
+
 set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
 set -g fish_user_paths "$GOPATH/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/postgresql@9.4/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/php@7.1/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/php@7.1/sbin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/node@8/bin" $fish_user_paths
