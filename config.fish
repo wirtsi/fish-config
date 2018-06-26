@@ -23,6 +23,9 @@ set -x KUBE_EDITOR nvim
 #visual mode
 set -x VISUAL nvim
 
+#longer pwd
+set -x fish_prompt_pwd_dir_length 5
+
 alias vi="/usr/local/bin/nvim"
 alias vim="/usr/local/bin/nvim"
 alias k="/usr/local/bin/kubectl"
