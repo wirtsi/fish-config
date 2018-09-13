@@ -26,6 +26,9 @@ set -x VISUAL nvim
 #longer pwd
 set -x fish_prompt_pwd_dir_length 5
 
+#pyenv
+status --is-interactive; and source (pyenv init -|psub)
+
 alias vi="/usr/local/bin/nvim"
 alias vim="/usr/local/bin/nvim"
 alias k="/usr/local/bin/kubectl"
@@ -39,7 +42,9 @@ set -x PATH /usr/local/opt/gettext/bin /usr/local/opt/sqlite/bin \
     $PATH
 
 
-set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!coverage/*" --glob "!reports/*" --glob "!build/*"'
+# set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!coverage/*" --glob "!reports/*" --glob "!build/*"'
+
+set -x FZF_DEFAULT_COMMAND 'fd --type file --color=always --follow --hidden --exclude .git'
 
 set -x GOPATH ~/go
 set -x GOROOT /usr/local/opt/go/libexec
@@ -51,3 +56,7 @@ set -g fish_user_paths "/usr/local/opt/postgresql@9.4/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/php@7.1/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/php@7.1/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/node@8/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/scala@2.11/bin" $fish_user_paths
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+

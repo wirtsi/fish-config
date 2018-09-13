@@ -10,14 +10,19 @@ function prompt_kubernetes -d 'kubernetes env highlighter'
       echo "$right_segment_separator"
       set_color -b brgreen black
       echo " "
-      kubectl config view | grep namespace: | sed -e 's/.*: \(.*\)/\1/'
+      kubectl config view | grep -A1 "cluster: staging"|tr -d '\n' | sed -e 's/.*namespace: \(.*\)/\1/'
+    case 'staging-old'
+      set_color -b black bryellow
+      echo "$right_segment_separator"
+      set_color -b bryellow black
+      echo " "
+      kubectl config view | grep -A1 "cluster: staging-old"|tr -d '\n' | sed -e 's/.*namespace: \(.*\)/\1/'
     case 'production'
       set_color -b black brred
       echo "$right_segment_separator"
       set_color -b brred black
       echo " "
-      #kubectl config view | grep namespace: | sed -e 's/.*: \(.*\)/\1/'
-      kubectl config view | grep -A1 "cluster: $kubernetes_env"|tr '\n' ' ' | sed -e 's/.*namespace: \(.*\)/\1/'
+      kubectl config view | grep -A1 "cluster: production"|tr -d '\n' | sed -e 's/.*namespace: \(.*\)/\1/'
   end
   set_color -b normal
 end
