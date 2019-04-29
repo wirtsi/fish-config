@@ -1,7 +1,5 @@
 #enable vi mode
 set fish_key_bindings fish_vi_key_bindings
-#Java
-set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
 #Tomorrow Night
 if status --is-interactive
@@ -29,6 +27,9 @@ set -x fish_prompt_pwd_dir_length 5
 #pyenv
 status --is-interactive; and source (pyenv init -|psub)
 
+#conda
+source ~/.pyenv/versions/miniconda3-4.3.30/etc/fish/conf.d/conda.fish
+
 alias vi="/usr/local/bin/nvim"
 alias vim="/usr/local/bin/nvim"
 alias k="/usr/local/bin/kubectl"
@@ -41,22 +42,24 @@ set -x PATH /usr/local/opt/gettext/bin /usr/local/opt/sqlite/bin \
     ~/.config/yarn/global/node_modules/.bin \
     $PATH
 
-
-# set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!coverage/*" --glob "!reports/*" --glob "!build/*"'
-
-set -x FZF_DEFAULT_COMMAND 'fd --type file --color=always --follow --hidden --exclude .git'
-
 set -x GOPATH ~/go
 set -x GOROOT /usr/local/opt/go/libexec
 
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
 set -g fish_user_paths "$GOPATH/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/postgresql@9.4/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/php@7.1/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/php@7.1/sbin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/node@8/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/postgresql/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/scala@2.11/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin" $fish_user_paths
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
+#Java
+set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
+
+# Spark
+set -x SPARK_HOME /usr/local/Cellar/apache-spark/2.3.1/libexec
+set -x PYSPARK_DRIVER_PYTHON jupyter
+set -x PYSPARK_DRIVER_PYTHON_OPTS "notebook"
