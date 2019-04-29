@@ -35,9 +35,7 @@ alias vim="/usr/local/bin/nvim"
 alias k="/usr/local/bin/kubectl"
 alias l="ls -la"
 
-#set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $PATH
-set -x PATH /usr/local/opt/gettext/bin /usr/local/opt/sqlite/bin \
-    /usr/local/opt/openssl/bin \
+set -x PATH \
     ~/.composer/vendor/bin \
     ~/.config/yarn/global/node_modules/.bin \
     $PATH
@@ -46,12 +44,15 @@ set -x GOPATH ~/go
 set -x GOROOT /usr/local/opt/go/libexec
 
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/gettext/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
 set -g fish_user_paths "$GOPATH/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/postgresql/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/scala@2.11/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin" $fish_user_paths
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
