@@ -3,7 +3,8 @@ set fish_key_bindings fish_vi_key_bindings
 
 #Tomorrow Night
 if status --is-interactive
-    eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
+    set BASE16_SHELL "$HOME/.config/base16-shell/"
+    source "$BASE16_SHELL/profile_helper.fish"
 end
 
 #https://github.com/ryanoasis/nerd-fonts
