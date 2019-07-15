@@ -27,7 +27,14 @@ function prompt_kubernetes -d 'kubernetes env highlighter'
   set_color -b normal
 end
 
+function terraform_workspace -d "Show terraform_workspace"
+  if test -e ".terraform"
+    terraform workspace show
+  end
+end
+
 
 function fish_right_prompt -d 'Prints right prompt'
-  prompt_kubernetes
+  #prompt_kubernetes
+  terraform_workspace
 end
