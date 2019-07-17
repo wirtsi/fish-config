@@ -7,6 +7,9 @@ set fish_key_bindings fish_vi_key_bindings
 #https://github.com/ryanoasis/nerd-fonts
 set -x theme_nerd_fonts yes
 set -x theme_display_date no
+set -x SPACEFISH_PROMPT_SEPARATE_LINE false
+set -x SPACEFISH_PROMPT_ORDER time user dir host git exec_time line_sep battery jobs exit_code char
+set -x SPACEFISH_RPROMPT_ORDER aws conda pyenv kubecontext
 
 #vim
 set -U EDITOR nvim
@@ -48,7 +51,7 @@ set -g fish_user_paths "/Users/fkrause/.local/bin" $fish_user_paths
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
 # source the proxy settings
-source proxy.fish
+source ~/.config/fish/proxy.fish
 
 #Java
 set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
