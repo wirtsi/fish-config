@@ -10,6 +10,7 @@ set -x theme_display_date no
 set -x SPACEFISH_PROMPT_SEPARATE_LINE false
 set -x SPACEFISH_PROMPT_ORDER time user dir host git pyenv exec_time line_sep battery jobs exit_code vi_mode char
 set -x SPACEFISH_RPROMPT_ORDER aws kubecontext
+set -x SPACEFISH_CHAR_SYMBOL 
 
 #vim
 set -U EDITOR nvim
@@ -31,6 +32,8 @@ alias vi="/usr/local/bin/nvim"
 alias vim="/usr/local/bin/nvim"
 alias k="/usr/local/bin/kubectl"
 alias l="ls -la"
+alias d="kitty +kitten diff"
+alias gd="git difftool --no-symlinks --dir-diff"
 
 set -x PATH \
     ~/.config/yarn/global/node_modules/.bin \
@@ -48,7 +51,7 @@ set -g fish_user_paths "$GOPATH/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/node/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "/Users/fkrause/.local/bin" $fish_user_paths
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+# test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
 # source the proxy settings
 source ~/.config/fish/proxy.fish
