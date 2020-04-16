@@ -34,6 +34,7 @@ alias k="/usr/local/bin/kubectl"
 alias l="ls -la"
 alias d="kitty +kitten diff"
 alias gd="git difftool --no-symlinks --dir-diff"
+alias ssh="kitty kitten ssh"
 
 set -x PATH \
     ~/.config/yarn/global/node_modules/.bin \
@@ -48,7 +49,7 @@ set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
 set -g fish_user_paths "$GOPATH/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/node/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/node@12/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "/Users/fkrause/.local/bin" $fish_user_paths
 # test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
