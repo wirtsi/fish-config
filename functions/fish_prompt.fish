@@ -1,33 +1,37 @@
+_tide_detect_os
+_tide_git_prompt_set_vars
+
+# Set things that wont change
+set -g _tide_left_prompt_display_var _tide_left_prompt_display_$fish_pid
+
+set -gx _tide_fish_pid $fish_pid
+set -x fish_term24bit $fish_term24bit
+
 function fish_prompt
-	# Store the exit code of the last command
-	set -g sf_exit_code $status
-	set -g SPACEFISH_VERSION 2.6.1
+    set -lx _tide_last_pipestatus $pipestatus
+    set -lx _tide_jobs_number (jobs --pid | count)
 
-	# ------------------------------------------------------------------------------
-	# Configuration
-	# ------------------------------------------------------------------------------
+    fish --command "
+    set CMD_DURATION $CMD_DURATION
+    set COLUMNS $COLUMNS
+    set fish_bind_mode $fish_bind_mode
 
-	__sf_util_set_default SPACEFISH_PROMPT_ADD_NEWLINE true
-	__sf_util_set_default SPACEFISH_PROMPT_FIRST_PREFIX_SHOW false
-	__sf_util_set_default SPACEFISH_PROMPT_PREFIXES_SHOW true
-	__sf_util_set_default SPACEFISH_PROMPT_SUFFIXES_SHOW true
-	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_PREFIX "via "
-	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_SUFFIX " "
-	__sf_util_set_default SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell julia elixir docker aws venv conda pyenv dotnet kubecontext exec_time line_sep battery vi_mode jobs exit_code char
+    command kill $_tide_last_pid 2>/dev/null
+    set -U _tide_left_prompt_display_$fish_pid (_tide_prompt)
+    " >&- & # >&- closes stdout. See https://github.com/fish-shell/fish-shell/issues/7559
 
-	# ------------------------------------------------------------------------------
-	# Sections
-	# ------------------------------------------------------------------------------
+    set -g _tide_last_pid (jobs --last --pid)
+    disown $_tide_last_pid 2>/dev/null
 
-	# Keep track of whether the prompt has already been opened
-	set -g sf_prompt_opened $SPACEFISH_PROMPT_FIRST_PREFIX_SHOW
+    string unescape $$_tide_left_prompt_display_var
+end
 
-	if test "$SPACEFISH_PROMPT_ADD_NEWLINE" = "true"
-		echo
-	end
+function _tide_refresh_prompt --on-variable _tide_left_prompt_display_$fish_pid --on-variable _tide_right_prompt_display_$fish_pid
+    commandline --function force-repaint
+end
 
-	for i in $SPACEFISH_PROMPT_ORDER
-		eval __sf_section_$i
-	end
-	set_color normal
+# Double underscores to avoid erasing this function on uninstall
+function __tide_on_fish_exit --on-event fish_exit
+    set -e _tide_left_prompt_display_$fish_pid
+    set -e _tide_right_prompt_display_$fish_pid
 end

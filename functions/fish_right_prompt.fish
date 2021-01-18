@@ -1,19 +1,8 @@
+set -g _tide_right_prompt_display_var _tide_right_prompt_display_$fish_pid
+
 function fish_right_prompt
-
-	# ------------------------------------------------------------------------------
-	# Configuration
-	# ------------------------------------------------------------------------------
-
-	__sf_util_set_default SPACEFISH_RPROMPT_ORDER ""
-
-	# ------------------------------------------------------------------------------
-	# Sections
-	# ------------------------------------------------------------------------------
-
-	[ -n "$SPACEFISH_RPROMPT_ORDER" ]; or return
-
-	for i in $SPACEFISH_RPROMPT_ORDER
-		eval __sf_section_$i
-	end
-	set_color normal
+    printf '%s' $$_tide_right_prompt_display_var
+    # Right prompt is always the last thing on the line 
+    # therefore reset colors for tab completion
+    set_color normal
 end
