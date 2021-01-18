@@ -4,8 +4,6 @@ set fish_key_bindings fish_vi_key_bindings
 #https://github.com/ryanoasis/nerd-fonts
 set -x theme_nerd_fonts yes
 set -x theme_display_date no
-set -x SPACEFISH_PROMPT_SEPARATE_LINE false
-set -x SPACEFISH_PROMPT_ORDER time user dir host git pyenv exec_time line_sep battery jobs exit_code vi_mode
 
 #vim
 set -x EDITOR nvim
@@ -24,8 +22,9 @@ alias k="/usr/local/bin/kubectl"
 alias l="ls -la"
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
 alias lg="lazygit"
-
 alias gd="git difftool --no-symlinks --dir-diff"
+alias d="kitty +kitten diff"
+alias ssh="kitty kitten ssh"
 
 set -x PATH \
     ~/.config/yarn/global/node_modules/.bin \
