@@ -26,24 +26,28 @@ alias d="kitty +kitten diff"
 alias cat='bat'
 alias ssh="kitty +kitten ssh"
 alias nn="NNN_OPENER=~/.config/nnn/plugins/nuke nnn -c"
+alias icat="kitten icat"
 
-set -x PATH \
-    ~/.config/yarn/global/node_modules/.bin \
-    $PATH
+
+# set -x PATH \
+# ~/.config/yarn/global/node_modules/.bin \
+# $PATH
 
 set -x GOPATH ~/go
 
 set -g fish_user_paths /opt/homebrew/bin $fish_user_paths
+set -g fish_user_paths /opt/homebrew/sbin $fish_user_paths
 set -g fish_user_paths "$GOPATH/bin" $fish_user_paths
 # set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths /opt/homebrew/opt/gettext/bin $fish_user_paths
 set -g fish_user_paths "/opt/homebrew/opt/openssl@1.1/bin" $fish_user_paths
 set -g fish_user_paths /opt/homebrew/opt/icu4c/bin $fish_user_paths
 set -g fish_user_paths /opt/homebrew/opt/icu4c/sbin $fish_user_paths
-set -g fish_user_paths /opt/homebrew/opt/node@16/bin $fish_user_paths
+set -g fish_user_paths /opt/homebrew/opt/node/bin $fish_user_paths
 set -g fish_user_paths /opt/homebrew/opt/sqlite/bin $fish_user_paths
 set -g fish_user_paths "/opt/homebrew/opt/openjdk@16/bin" $fish_user_paths
 set -g fish_user_paths "/Users/floriankrause/.cargo/bin" $fish_user_paths
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 status is-interactive && eval /Users/floriankrause/miniforge3/bin/conda "shell.fish" hook $argv | source
