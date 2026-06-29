@@ -1,11 +1,13 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
+SETUVAR --export PYENV_ROOT:/Users/floriankrause/\x2epyenv
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:true
 SETUVAR __fish_init_3_x:\x1d
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:4300
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/floriankrause/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/floriankrause/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher
+SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:/Users/floriankrause/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e/Users/floriankrause/\x2econfig/fish/functions/_nvm_list\x2efish\x1e/Users/floriankrause/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e/Users/floriankrause/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e/Users/floriankrause/\x2econfig/fish/functions/nvm\x2efish\x1e/Users/floriankrause/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e/Users/floriankrause/\x2econfig/fish/completions/nvm\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish
 SETUVAR _tide_color_dark_blue:0087AF
 SETUVAR _tide_color_dark_green:5FAF00
 SETUVAR _tide_color_gold:D7AF00
@@ -148,34 +150,5 @@ SETUVAR _tide_right_prompt_display_99255:\x1b\x28B\x1b\x5bm
 SETUVAR _tide_right_prompt_display_99872:\x1b\x28B\x1b\x5bm
 SETUVAR _tide_root:/Users/fkrause/\x2econfig/fish
 SETUVAR _tide_var_immutable_list:_tide_color_dark_blue\x1e_tide_color_dark_green\x1e_tide_color_gold\x1e_tide_color_green\x1e_tide_color_light_blue\x1e_tide_root\x1eVIRTUAL_ENV_DISABLE_PROMPT
-SETUVAR fish_color_autosuggestion:555\x1ebrblack
-SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:\x2d\x2dbold
-SETUVAR fish_color_comment:red
-SETUVAR fish_color_cwd:green
-SETUVAR fish_color_cwd_root:red
-SETUVAR fish_color_end:brmagenta
-SETUVAR fish_color_error:brred
-SETUVAR fish_color_escape:bryellow\x1e\x2d\x2dbold
-SETUVAR fish_color_history_current:\x2d\x2dbold
-SETUVAR fish_color_host:normal
-SETUVAR fish_color_host_remote:yellow
-SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
-SETUVAR fish_color_normal:normal
-SETUVAR fish_color_operator:bryellow
-SETUVAR fish_color_param:cyan
-SETUVAR fish_color_quote:yellow
-SETUVAR fish_color_redirection:brblue
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
-SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
-SETUVAR fish_color_status:red
-SETUVAR fish_color_user:brgreen
-SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell
-SETUVAR fish_key_bindings:fish_vi_key_bindings
-SETUVAR fish_pager_color_completion:\x1d
-SETUVAR fish_pager_color_description:B3A06D\x1eyellow
-SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
-SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/Users/floriankrause/\x2ecargo/bin\x1e/opt/homebrew/opt/openjdk\x4016/bin\x1e/opt/homebrew/opt/sqlite/bin\x1e/opt/homebrew/opt/node\x4016/bin\x1e/opt/homebrew/opt/icu4c/sbin\x1e/opt/homebrew/opt/icu4c/bin\x1e/opt/homebrew/opt/openssl\x401\x2e1/bin\x1e/opt/homebrew/opt/gettext/bin\x1e/Users/floriankrause/go/bin\x1e/opt/homebrew/bin\x1e/opt/homebrew/opt/node\x4014/bin\x1e/Users/floriankrause/\x2eyarn/bin
